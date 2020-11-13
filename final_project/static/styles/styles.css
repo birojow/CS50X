@@ -1,0 +1,56 @@
+body
+{
+    background-color: #454545;
+}
+
+h1, h2, h3
+{
+    text-align: center;
+    color: lightgray;
+    padding-top: 30px;
+}
+
+.text
+{
+    padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    color: lightgray;
+    text-align: justify;
+}
+
+.input-group
+{
+    padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.progresso
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+form
+{
+    color: lightgray;
+    padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    align-self: center;
+}
+
+.join
+{
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.login
+{
+    padding-left: 25%;
+    padding-right: 25%;
+}
