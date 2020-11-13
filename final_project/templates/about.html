@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>CHALLENGE50 | About</title>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CHALLENGE50</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/challenge0">Challenge #0</a>
+                        <a class="dropdown-item" href="/challenge1">Challenge #1</a>
+                        <a class="dropdown-item" href="/challenge2">Challenge #2</a>
+                        <a class="dropdown-item" href="/challenge3">Challenge #3</a>
+                        <a class="dropdown-item" href="/challenge4">Challenge #4</a>
+                    </div>
+                </li>
+                {% if completed == "true" %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/final">FINAL TASKS!</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <hr>
+        <h1>ABOUT</h1>
+    </div>
+
+    <div>
+        <h2>About CHALLENGE50</h2>
+    </div>
+
+    <div class="text">
+        <p>
+            This website was created as a final project for the
+            <a target="blank" href="https://cs50.harvard.edu/x/2020/">Harvard's CS50x</a>,
+            an introduction to the intellectual enterprises of computer science and
+            the art of programming.
+        </p>
+        <p>
+            In it's Final Project page, the instructors make that request:
+            "All that we ask is that you build something of interest to you,
+            that you solve an actual problem, that you impact your community,
+            or that you change the world. Strive to create something that outlives this course.
+        </p>
+        <p>
+            I don't know how to change the world. It's to big a task to anyone.
+            In a world with almost 8 billion people, making any sort of impact is something
+            that most of us will live and die without achieving. But I believe that anyone can,
+            and should, make an impact to the people they care about. The people who are close to them.
+        </p>
+        <p>
+            In order to do that, I decided to challenge people to
+            search for the unknown. To do things that they are not used to.
+            To try to better understand others and learn and admire things
+            outside they preferences, beyond what is popular. I'm sure that
+            anyone who complete CHALLENGE50 will never forget that experience.
+        </p>
+        <p>
+            I hope to achieve more than just a certificate. I hope this idea
+            outlives myself in your memories.
+        </p>
+    </div>
+
+    <div>
+        <h2>About me</h2>
+    </div>
+
+    <div class="text">
+        <p>
+            My name is Fabiano. I was born in 1987 in Campinas, São Paulo, Brasil.
+            Right <a target="blank" href="https://www.google.com/maps/place/Maternidade+de+Campinas
+            /@-22.8993443,-47.0637614,18.13z/data=!4m13!1m7!3m6!1s0x94c8c8f6a2552649:0x7475001c5804
+            3536!2sCampinas+-+SP!3b1!8m2!3d-22.9329252!4d-47.073845!3m4!1s0x94c8c89e0c25bb79:0x938b
+            fc01abc50c2b!8m2!3d-22.8995561!4d-47.063237">here</a>, to be precise.
+        </p>
+        <p>
+            I got a vocational degree in Electronics back in 2007. In july, 2020,
+            I started studying code development. Besides CS50x, I'm studying at
+            a local university for an associate degree, which I should get by the
+            end of 2022.
+        </p>
+        <p>
+            My main hobby is reading. I also enjoy coding, obviously, designing
+            electronics circuits, which is also obvious, and other things that
+            are not so obvious: baseball (almost inexistent in Brasil) and football
+            (american, not soccer).
+        </p>
+        <p>
+            Despite being a brazilian, I hate soccer. But I like
+            <a target="blank" href="https://en.wikipedia.org/wiki/Caipirinha">caipirinhas</a>.
+        </p>
+    </div>
+{% endblock %}

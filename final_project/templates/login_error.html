@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>CHALLENGE50 | Error</title>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CHALLENGE50</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item left">
+                    <a class="nav-link" href="/join">Join</a>
+                </li>
+                <li class="nav-item left">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <hr>
+        <h1>SORRY...</h1>
+        <div class="text">
+            <p>
+                Wrong username/password.
+            </p>
+        </div>
+        <div class="text">
+            <a class="btn btn-primary" href="/login" role="button">Retry</a>
+        </div>
+    </div>
+{% endblock %}

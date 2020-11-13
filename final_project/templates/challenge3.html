@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>CHALLENGE50 | #3</title>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CHALLENGE50</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/challenge0">Challenge #0</a>
+                        <a class="dropdown-item" href="/challenge1">Challenge #1</a>
+                        <a class="dropdown-item" href="/challenge2">Challenge #2</a>
+                        <a class="dropdown-item active" href="#">Challenge #3<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="/challenge4">Challenge #4</a>
+                    </div>
+                </li>
+                {% if completed == "true" %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/final">FINAL TASKS!</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <hr>
+        <h1>CHALLENGE #3</h1>
+        <h2>Culture</h2>
+    </div>
+
+    <div class="text">
+        <ul>
+            <li>GOAL: Watch 50 documentaries.</li>
+            <li>REQUIREMENTS:
+                <ul>
+                    <li>Watch documentaries of these categories:</li>
+                        <ul>
+                            <li>10 biographical documentaries;</li>
+                            <li>10 historical documentaries;</li>
+                            <li>10 sports documentaries;</li>
+                            <li>10 scientific documentaries;</li>
+                            <li>10 cultural documentaries;</li>
+                        </ul>
+                    <li>If you watch a documentary with more than 1 episode, it still counts as being only one documentary;</li>
+                    <li>Each documentary should be included in only one category.</li>
+                </ul>
+            </li>
+            <li>SUGGESTIONS:
+                <ul>
+                    <li>You can include in the count the documentaries you've already watched;</li>
+                    <li>If you watch 1 documentary per week, you will complete this challenge in 1 year.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Your progress...</h2>
+    </div>
+
+    <form action="/challenge3" method="post">
+        <div class="row">
+            <div class="col-4">
+                <label class="my-1 mr-2 col-form-label" for="customSelectPref1"></label>Biographical documentaries watched</label>
+            </div>
+            <div class="col-2">
+                <select class="form-control-sm my-1 ml-sm-2 mr-sm-2" id="customSelectPref1" name="p01">
+                    <option value="0" {% if progress[0] == 0 %} selected {% endif %}>0</option>
+                    <option value="1" {% if progress[0] == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if progress[0] == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if progress[0] == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if progress[0] == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if progress[0] == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if progress[0] == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if progress[0] == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if progress[0] == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if progress[0] == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if progress[0] == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label class="my-1 mr-2 col-form-label" for="customSelectPref2"></label>Historical documentaries watched</label>
+            </div>
+            <div class="col-2">
+                <select class="form-control-sm my-1 ml-sm-2 mr-sm-2" id="customSelectPref2" name="p02">
+                    <option value="0" {% if progress[1] == 0 %} selected {% endif %}>0</option>
+                    <option value="1" {% if progress[1] == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if progress[1] == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if progress[1] == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if progress[1] == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if progress[1] == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if progress[1] == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if progress[1] == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if progress[1] == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if progress[1] == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if progress[1] == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label class="my-1 mr-2 col-form-label" for="customSelectPref3"></label>Sports documentaries watched</label>
+            </div>
+            <div class="col-2">
+                <select class="form-control-sm my-1 ml-sm-2 mr-sm-2" id="customSelectPref3" name="p03">
+                    <option value="0" {% if progress[2] == 0 %} selected {% endif %}>0</option>
+                    <option value="1" {% if progress[2] == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if progress[2] == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if progress[2] == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if progress[2] == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if progress[2] == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if progress[2] == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if progress[2] == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if progress[2] == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if progress[2] == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if progress[2] == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label class="my-1 mr-2 col-form-label" for="customSelectPref4"></label>Scientific documentaries watched</label>
+            </div>
+            <div class="col-2">
+                <select class="form-control-sm my-1 ml-sm-2 mr-sm-2" id="customSelectPref4" name="p04">
+                    <option value="0" {% if progress[3] == 0 %} selected {% endif %}>0</option>
+                    <option value="1" {% if progress[3] == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if progress[3] == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if progress[3] == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if progress[3] == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if progress[3] == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if progress[3] == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if progress[3] == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if progress[3] == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if progress[3] == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if progress[3] == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label class="my-1 mr-2 col-form-label" for="customSelectPref5"></label>Cultural documentaries watched</label>
+            </div>
+            <div class="col-2">
+                <select class="form-control-sm my-1 ml-sm-2 mr-sm-2" id="customSelectPref5" name="p05">
+                    <option value="0" {% if progress[4] == 0 %} selected {% endif %}>0</option>
+                    <option value="1" {% if progress[4] == 1 %} selected {% endif %}>1</option>
+                    <option value="2" {% if progress[4] == 2 %} selected {% endif %}>2</option>
+                    <option value="3" {% if progress[4] == 3 %} selected {% endif %}>3</option>
+                    <option value="4" {% if progress[4] == 4 %} selected {% endif %}>4</option>
+                    <option value="5" {% if progress[4] == 5 %} selected {% endif %}>5</option>
+                    <option value="6" {% if progress[4] == 6 %} selected {% endif %}>6</option>
+                    <option value="7" {% if progress[4] == 7 %} selected {% endif %}>7</option>
+                    <option value="8" {% if progress[4] == 8 %} selected {% endif %}>8</option>
+                    <option value="9" {% if progress[4] == 9 %} selected {% endif %}>9</option>
+                    <option value="10" {% if progress[4] == 10 %} selected {% endif %}>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary my-1">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <hr>
+    </div>
+{% endblock %}

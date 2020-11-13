@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block head %}
+   <title>CHALLENGE50 | #0</title>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CHALLENGE50</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/challenge0">Challenge #0</a>
+                        <a class="dropdown-item" href="/challenge1">Challenge #1</a>
+                        <a class="dropdown-item" href="/challenge2">Challenge #2</a>
+                        <a class="dropdown-item" href="/challenge3">Challenge #3</a>
+                        <a class="dropdown-item" href="/challenge4">Challenge #4</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">FINAL TASKS!<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <hr>
+        <h1>FINAL TASKS</h1>
+    </div>
+
+    <div class="text">
+        <p>Congratulations!</p>
+        <p>I didn't expected anyone to come this far.</p>
+        <p>
+            I trust you, though. You don't need to prove you have done all tasks.
+            But I would love to know how the experience affected you.
+        </p>
+        <p>
+            So, I prepared these final tasks; not an additional challenge,
+            just a way to climax the challenges by making a retrospective.
+        </p>
+        <ul>
+            <li>GOAL: Complete these final tasks.</li>
+            <li>REQUIREMENTS:
+                <ul>
+                    <li>
+                        Make a meeting with a couple family members and/or friends to
+                        talk about CHALLENGE50. Tell them your experiences and ask their opinion;
+                    </li>
+                    <li>Record the meeting, with consent of all participants;</li>
+                    <li>Upload it to Youtube or a similar website, and take note of the URL;</li>
+                    <li>Fill this <a href="https://forms.gle/CK8rr4gmJTFkwd4G7" target="blank">form</a>;</li>
+                    <li>Invite other people to take the challenge;</li>
+                    <li>Plan how to keep doing the tasks that you liked the most. Make it part of your life.</li>
+                </ul>
+            </li>
+            <li>SUGGESTIONS:
+                <ul>
+                    <li>The meeting can be in person or remotely;</li>
+                    <li>
+                        Instead of recording the meeting, you can record a short video in which 
+                        you talk about the whole experience;
+                    </li>
+                    <li>You can tag your uploaded video as "unlisted" (but not as "private", please);</li>
+                    <li>You can make a podcast instead of a video;</li>
+                    <li>If you already invited some people to join, ignore this particular task.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>When you fill the form above, you can consider the challenge completed.</p>
+    </div>
+
+    <h2>WHAT ABOUT NOW?</h2>
+
+    <div class="text">
+        <p>Now it's up to you.</p>
+        <p>Only you can decided what to do with the lessons you've learned.</p>
+        <p>
+            I hope you have learned a lot. I hope this experience has transformed you
+            ia a positive way.
+        </p>
+        <p>But most of all, I hope you keep challenging yourself.</p>
+        <p>Thank you.</p>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+{% endblock %}
